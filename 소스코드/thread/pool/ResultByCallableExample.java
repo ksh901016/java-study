@@ -10,7 +10,7 @@ public class ResultByCallableExample {
         ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
         System.out.println("=작업 처리 요청=");
-        Callable<Integer> task = new Callable() {
+        Callable<Integer> task = new Callable<Integer>() {
             @Override
             public Integer call() {
                 int sum = 0;
