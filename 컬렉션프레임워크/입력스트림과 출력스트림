@@ -1,0 +1,56 @@
+### 입력 스트림과 출력 스트림
+
+프로그램 데이터를 입력받을 때 쓰이는 스트림 :  입력 스트림(InputStream) 
+
+ex) 키보드, 파일 ..
+
+프로그램 데이터를 보낼 때에는 쓰이는 스트림 : 출력 스트림(OutputStream) 
+
+ex) 모니터, 파일 ..
+
+
+
+자바는 기본적인 데이터 입출력(IO : Input/Output) API를 제공 (java.io)
+
+| 클래스                                                       | 설명                                                      |
+| ------------------------------------------------------------ | --------------------------------------------------------- |
+| InputStream/OutputStream                                     | **바이트 단위 입출력**을 위한 최상위 입출력 스트림 클래스 |
+| FileInputStream/FileOutputStream<br />DataInputStream/DataOutputStream<br />ObjectInputStream/ObjectOutputStream<br />BufferedInputStream/BufferedOutputStream | **바이트 단위 입출력**을 위한 하위 스트림 클래스(구현체)  |
+| Reader/Writer                                                | **문자 단위 입출력**을 위한 최상위 입출력 스트림 클래스   |
+| FileReader/FileWriter<br />InputStreamReader/OutputStreamWriter<br />BufferedReader/BufferedWriter | **문자 단위 입출력**을 위한 하위 스트림 클래스            |
+
+크게 두가지 **바이트(byte)** 기반 스트림, **문자(character)** 기반 스트림으로 나뉜다.
+
+**바이트기반** -> InputStream/OutputStream가 붙음 (그림, 멀티미디어, 텍스트 등등)
+
+**문자기반** -> Reader/Writer가 붙음 (텍스트 파일)
+
+
+
+**InputStream**
+
+주요 메소드
+
+| 리턴 타입 | 메소드                           | 설명                                                         |
+| --------- | -------------------------------- | ------------------------------------------------------------ |
+| int       | read()                           | 입력 스트림으로부터 1바이트를 읽고 읽은 바이트 리턴          |
+| int       | read(byte[] b)                   | 입력 스트림으로부터 읽은 바이트를 b에 저장하고 실제로 읽은 바이트 수 리턴 |
+| int       | read(byte[] b, int off, int len) | 입력 스트림으로부터 len개의 만큼 읽고 주어진 바이트 배열 b[off]부터 len개 까지 저장. 그리고 실제로 읽은 바이트 수 리턴 |
+| void      | close()                          | 자원 시스템을 반납하고 입력 스트림을 닫는다.                 |
+
+
+
+
+
+**OutputStream**
+
+주요 메소드
+
+| 리턴 타입 | 메소드                            | 설명 |
+| --------- | --------------------------------- | ---- |
+| void      | write(int b)                      |      |
+| void      | write(byte[] b)                   |      |
+| void      | write(byte[] b, int off, int len) |      |
+| void      | flush()                           |      |
+| void      | close()                           |      |
+
